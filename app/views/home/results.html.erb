@@ -1,0 +1,60 @@
+<%= link_to 'Home!', root_path %>
+<% if @fbprofile %>
+	Mi perfil!
+	<%= link_to @fbprofile["name"], @fbprofile["link"], :target => '_blank' %><br />
+	<%= image_tag @fbp_image, :size => "80x80" %><br />
+<% end %>
+
+<br/>
+<div>Consejos</div>
+<ol class="group-list">
+	<li>Probar distintas combinaciones de palabras para obtener mejores resultados, ejemplo: monoambiente (mono ambiente, mono-ambiente, etc.)</li>
+</ol>
+<br/>
+<ol class="group-list">
+	<li>Aplicar plantilla</li>
+	<li>Guardar valores de busqueda: grupo y cant de posts</li>
+	<li>Ordernar nombres de grupos</li>
+</ol>
+
+<%= form_tag(:url => {:controller => 'home', :action => 'results'}) do %>
+	<%= select_tag(:group, options_for_select(@fbp_groups.collect {|s| [s["name"], s["id"]]}) ) %><br/>
+	Últimos<%= select_tag(:posts_cant, options_for_select([10, 20, 30, 40, 50, 60, 70, 80])) %> posts 
+	<%= submit_tag "Obtener!" %>
+<% end %>
+
+<% if @graph_group_data %>
+	<div id="search_box">
+			<input id="search_input" placeholder="buscar"><br/>
+			<span id="num_results"></span> posts
+			<br/>
+	</div>
+	<br/>
+
+	<%= image_tag @graph_group_data["icon"] %>
+	<%= link_to @graph_group_data["name"], "http://facebook.com/" + @graph_group_data["id"], :target => '_blank' %>
+	<br/>
+	<div class="group-list">
+		<%= @graph_group_data["description"] %>
+	</div>
+	<br/>
+
+	<ul id="search_list" class="group-list">
+		<% @graph_group_data.each do |item| %>
+			<!-- 1er item item[0] es el ID, 2do item item[1] es el feed -->
+			<% if item[1]["data"] %>
+				<% item[1]["data"].each do |m| %>
+					<li>
+						<%= link_to m["from"]["name"], "http://facebook.com/" + m["from"]["id"], :target => '_blank' %><br/>
+						<%= m["message"] %><br/>
+						<div class="item-updated-time" title="<%= m["updated_time"] %>">
+							<%= m["updated_time"] %>
+						</div>
+						<%= link_to "Ver anuncio", "http://facebook.com/" + m["id"], :target => '_blank' %>
+					</li>
+					<br />
+				<% end %>
+			<% end %>
+		<% end %>
+	</ul>
+<% end %>
