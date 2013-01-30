@@ -12,24 +12,61 @@
 //= require jquery.scrollUp.min
 
 $(document).ready(function(){
+  $('#loading').hide();
 	jQuery('div.item-updated-time').timeago();
-
-	$('#search_input').fastLiveFilter('#search_list', {
-		callback: function(total) { $('#num_results').html(total); }
-	});
-	$('#search_input').focus();
-	$('#num_results').html($('#search_list li').size())
-
-	$(function () {
-	    $.scrollUp({
-	        scrollName: 'scrollUp', // Element ID
-	        topDistance: '600', // Distance from top before showing element (px)
-	        topSpeed: 300, // Speed back to top (ms)
-	        animation: 'fade', // Fade, slide, none
-	        animationInSpeed: 200, // Animation in speed (ms)
-	        animationOutSpeed: 200, // Animation out speed (ms)
-	        scrollText: 'Ir arriba :)', // Text for element
-	        activeOverlay: true, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-	    });
-	});
+  set_scroll_up();
+  set_search_button();
 });
+
+function set_scroll_up(){
+  $(function () {
+      $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '600', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 200, // Animation in speed (ms)
+          animationOutSpeed: 200, // Animation out speed (ms)
+          scrollText: 'Ir arriba :)', // Text for element
+          activeOverlay: true, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+      });
+  });
+}
+
+function set_search_button() {
+  $('input#search_button').click(function(event){
+
+    $('#loading').show();
+
+    var e1    = document.getElementById("group");
+    var drop1 = e1.options[e1.selectedIndex].value;
+    
+    var e2    = document.getElementById("posts_cant");
+    var drop2 = e2.options[e2.selectedIndex].value;
+    
+    event.preventDefault(); 
+    $.ajax({
+      type    : "GET",
+      beforeSend: function(xhr){
+        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+      },
+      url      : '/results?group=' + drop1 + '&posts_cant=' + drop2,
+      success  : function(data){
+        $('#loading').hide();
+        var html               = data;
+        var html_filtered      = $(html).filter('#posts_results');
+        $('div#posts_results').html(html_filtered);
+        set_live_filter();
+      }
+    });
+    event.stopPropagation();
+  });
+}
+
+function set_live_filter(){  
+  $('#search_input').fastLiveFilter('#search_list', {
+    callback: function(total) { $('#num_results').html(total); }
+  });
+  $('#num_results').html($('#search_list li').size())
+  $('#search_input').focus();
+}

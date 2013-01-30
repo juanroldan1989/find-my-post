@@ -23,4 +23,8 @@
   padding: 10px 20px;
   background: #555;
   color: #fff;
-}   
+}
+
+#loading {
+  text-align: center;
+}
