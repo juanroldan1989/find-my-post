@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+function checkAdd(theSel){
+if(theSel.selectedIndex==(theSel.options.length-1)){
+   newOpt=prompt("Enter new Option","")
+   if(newOpt>""){
+     theSel.options[theSel.selectedIndex].text=newOpt;
+     theSel.options[theSel.options.length]=new Option("Other");
+   }
+}
+}
+</script>
+</head>
+<body>
+<form>
+<select onChange="checkAdd(this)">
+<option>A</option>
+<option>B</option>
+<option>C</option>
+<option>Other</option>
+</select>
+</form>
+</body>
+</html>

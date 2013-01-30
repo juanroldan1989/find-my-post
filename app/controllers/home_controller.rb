@@ -23,8 +23,11 @@ class HomeController < ApplicationController
 			@fbp_image  = @api.get_picture("me")
 			@fbp_groups = @api.get_object("me/groups")
 
+			fql          = "SELECT gid, name FROM group WHERE gid IN (SELECT gid FROM group_member WHERE uid = me()) ORDER BY name"
+			@user_groups = @api.fql_query(fql)
+
+			#selecciono un grupo del dropdown
 			if params[:group]
-				#consultas dentro de grupos
 				#consultar grupo por su ID, no desde mi face: /me/groups/...
 				@graph_group_data    = @api.get_object("/" + params[:group], "fields" => "name,description,icon,feed.fields(from,message).limit(" + params[:posts_cant] + ")")
 			end

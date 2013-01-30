@@ -28,9 +28,8 @@ $(document).ready(function(){
 	        animation: 'fade', // Fade, slide, none
 	        animationInSpeed: 200, // Animation in speed (ms)
 	        animationOutSpeed: 200, // Animation out speed (ms)
-	        scrollText: 'Ir arriba!', // Text for element
+	        scrollText: 'Ir arriba :)', // Text for element
 	        activeOverlay: true, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
 	    });
 	});
-
 });

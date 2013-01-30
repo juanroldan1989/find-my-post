@@ -14,14 +14,17 @@
 <ol class="group-list">
 	<li>Aplicar plantilla</li>
 	<li>Guardar valores de busqueda: grupo y cant de posts</li>
-	<li>Ordernar nombres de grupos</li>
+	<li>Hacer llamada por ajax, para mostrar circulo de "loading..."</li>
+	<li>Limpiar la URL</li>
+	<li>Casos en donde el post es una imagen/video, mostrar el titulo de esa imagen/video</li>
 </ol>
 
 <%= form_tag(:url => {:controller => 'home', :action => 'results'}) do %>
-	<%= select_tag(:group, options_for_select(@fbp_groups.collect {|s| [s["name"], s["id"]]}) ) %><br/>
-	Últimos<%= select_tag(:posts_cant, options_for_select([10, 20, 30, 40, 50, 60, 70, 80])) %> posts 
+	<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}) ) %><br/>
+	Últimos<%= select_tag(:posts_cant, options_for_select([10, 20, 30, 40, 50, 100, 150, 200, 250])) %> posts 
 	<%= submit_tag "Obtener!" %>
 <% end %>
+
 
 <% if @graph_group_data %>
 	<div id="search_box">
@@ -50,7 +53,7 @@
 						<div class="item-updated-time" title="<%= m["updated_time"] %>">
 							<%= m["updated_time"] %>
 						</div>
-						<%= link_to "Ver anuncio", "http://facebook.com/" + m["id"], :target => '_blank' %>
+						<%= link_to "Ver en Facebook", "http://facebook.com/" + m["id"], :target => '_blank' %>
 					</li>
 					<br />
 				<% end %>
