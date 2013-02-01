@@ -1,12 +1,48 @@
-<p>
-	La aplicacion sólo lee información sobre los grupos a los que pertenece,
-	para poder presentarle los resultados.
-</p>
+<div class="row">
 
-<p>
- Buscar en grupos sin distracciones!
- Grupos ordenados alfabeticamente!
- Filtrado instantaneo de la informacion importate!
-</p>
-<br/>
-<%= link_to 'Permitir acceso', @auth_url, :class=>"button"%>
+  <div id="welcome_panel" class="seven columns panel">
+    <h3>Bienvenido!</h3>
+    <h5 class="subheader">
+      <h6 class="subheader">Una aplicación diseñada para obtener de forma sencilla y rápida
+        los posts de un grupo del que estás participando</h6>
+
+      <div id="icon_number_1" class="two columns"><img src="/images/icon_number_1.png" /></div>
+      <h6 class="subheader">Elegir grupo y cantidad de posts</h6>
+
+      <div id="icon_number_2" class="two columns"><img src="/images/icon_number_2.png" /></div>
+      <h6 class="subheader">Buscar</h6>
+      
+      <div id="icon_number_3" class="two columns"><img src="/images/icon_number_3.png" /></div>
+      <h6 class="subheader">Filtrar posts de interés (por contenido, autor, etc.)</h6>
+    </h5>
+    <br/>
+    <div id="grant_access">
+      <%= link_to 'Comenzar!', @auth_url, :class=>"radius button", :id => 'access_button'%>
+    </div>
+    <div id="loading_access">
+      <img src="/images/roller.gif" />
+    </div>
+  </div>
+
+  <div id="access_panel" class="two columns panel">
+    <div>
+      <h4>Contacto</h4>
+      <ul class="social" id="jquery">
+        <li class="facebook" style="opacity: 1;">
+          <a href="http://www.facebook.com/juan.malware" target="_blank"><strong style="opacity: 0; top: -1px;">Facebook</strong></a>
+        </li>
+        <li>&nbsp;</li>
+        <li class="linkedin" style="opacity: 1;">
+          <a href="http://ar.linkedin.com/in/juanroldan89" target="_blank"><strong style="opacity: 0; top: -1px;">LinkedIn</strong></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="ten columns">
+    <hr>
+  </div>
+</div>

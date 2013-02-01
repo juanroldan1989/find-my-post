@@ -8,16 +8,16 @@
 
 #search_box{
     position:fixed;
-    top:370px;
-    left:820px;
+    top:330px;
+    left:880px;
 }
 
 .group-list {
-	width: 700px;
+	width: 480px;
 }
 
 #scrollUp {
-	left: 822px;
+	left: 880px;
   bottom: 20px;
   right: 20px;
   padding: 10px 20px;
@@ -27,4 +27,36 @@
 
 #loading {
   text-align: center;
+  left: 100px;
+}
+
+#title_logo{
+  width:745px;
+}
+
+#access_panel{
+  right: 180px;
+}
+
+#welcome_panel{
+  left:15px;
+}
+
+#search_button_div{
+  text-align: center;
+}
+
+#search_button_div_inside{
+  right: 150px;
+  top: 4px;
+}
+
+#icon_number_1{
+  width: 10%;
+}
+#icon_number_2{
+  width: 10%;
+}
+#icon_number_3{
+  width: 10%;
 }

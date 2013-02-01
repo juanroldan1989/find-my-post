@@ -12,10 +12,11 @@
 //= require jquery.scrollUp.min
 
 $(document).ready(function(){
+  $('#loading_access').hide();
   $('#loading').hide();
-	jQuery('div.item-updated-time').timeago();
   set_scroll_up();
   set_search_button();
+  loading_acces();
 });
 
 function set_scroll_up(){
@@ -36,6 +37,7 @@ function set_scroll_up(){
 function set_search_button() {
   $('input#search_button').click(function(event){
 
+    $('div#search_button_div').hide();
     $('#loading').show();
 
     var e1    = document.getElementById("group");
@@ -54,9 +56,11 @@ function set_search_button() {
       success  : function(data){
         $('#loading').hide();
         var html               = data;
-        var html_filtered      = $(html).filter('#posts_results');
+        var html_filtered      = $(html).filter('#ajax_results').find("#posts_results");
         $('div#posts_results').html(html_filtered);
         set_live_filter();
+        jQuery('#ajax_results .item-updated-time').timeago();
+        $('div#search_button_div').show();
       }
     });
     event.stopPropagation();
@@ -69,4 +73,11 @@ function set_live_filter(){
   });
   $('#num_results').html($('#search_list li').size())
   $('#search_input').focus();
+}
+
+function loading_acces(){
+  $('#access_button').click(function(){
+    $('#grant_access').hide();
+    $('#loading_access').show();
+  })
 }
