@@ -5,17 +5,32 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=250798808383711";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
 </head>
 <body>
 
 <div class="row">
-	<div class="twelve columns">
+	<div class="nine columns">
 			<div id="title_logo">
 				<br/>
 				<hr>
 				<img src="/images/title.png" />
 				<hr>
 			</div>
+	</div>
+	<div id ="face_button_like" class="two columns">
+		<div class="fb-like" data-href="http://www.facebook.com/encuentramipost" data-send="true" data-layout="box_count" data-width="450" data-show-faces="false" data-font="lucida grande">
+		</div>
 	</div>
 </div>
 
