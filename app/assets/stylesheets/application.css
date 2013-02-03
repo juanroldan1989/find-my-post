@@ -13,7 +13,7 @@
 }
 
 .group-list {
-	width: 480px;
+	width: 685px;
 }
 
 #scrollUp {
@@ -63,4 +63,15 @@
 
 #face_button_like{
   top: 36px;
+}
+
+.div-box {
+  padding:8px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+#ajax_results {
+  left:11.5%;
 }

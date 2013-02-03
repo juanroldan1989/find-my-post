@@ -68,37 +68,40 @@
 				</div>
 				<br/>
 
-				<ul id="search_list" class="group-list">
-					<% @graph_group_data.each do |item| %>
-						<!-- 1er item item[0] es el ID, 2do item item[1] es el feed -->
-						<% if item[1]["data"] %>
-							<% item[1]["data"].each do |m| %>
-									<div class="panel">
-										<h5>
-											<%= link_to m["from"]["name"], "http://facebook.com/" + m["from"]["id"], :target => '_blank' %>
-										</h5>
-										<% if m["message"] %>
-											<span style="display:block;"><%= m["message"] %></span>
-										<% else %>
-											<span style="display:block;"><%= m["name"] %></span>
-										<% end %>
-										<br/>
-										<ul class="link-list">
-											<li>
-												<strong><div class="item-updated-time" title="<%= m["updated_time"] %>">
-														<%= m["updated_time"] %>
-													</div>
-												</strong>
-											</li>
-											<li>
-												<%= link_to "Ver en Facebook", "http://facebook.com/" + m["id"], :target => '_blank' %>
-											</li>
-										</ul>
-									</div>
+				<div id="container" class="twelve columns">
+					<ul id="search_list" class="group-list">
+						<% @graph_group_data.each do |item| %>
+							<!-- 1er item item[0] es el ID, 2do item item[1] es el feed -->
+							<% if item[1]["data"] %>
+								<% item[1]["data"].each do |m| %>
+										<div class="four columns panel div-box box">
+											<h5>
+												<%= link_to m["from"]["name"], "http://facebook.com/" + m["from"]["id"], :target => '_blank' %>
+											</h5>
+											<% if m["message"] %>
+												<span style="display:block;"><%= m["message"] %></span>
+											<% else %>
+												<span style="display:block;"><%= m["name"] %></span>
+											<% end %>
+											<br/>
+											<ul class="link-list">
+												<li>
+													<strong><div class="item-updated-time" title="<%= m["updated_time"] %>">
+															<%= m["updated_time"] %>
+														</div>
+													</strong>
+												</li>
+												<li>
+													<%= link_to "Ver en Facebook", "http://facebook.com/" + m["id"], :target => '_blank' %>
+												</li>
+											</ul>
+										</div>
+								<% end %>
 							<% end %>
 						<% end %>
-					<% end %>
-				</ul>
+					</ul>
+				</div>
+
 			<% end %>
 		</div>
 	</div>
