@@ -8,7 +8,7 @@
 
 #search_box{
     position:fixed;
-    top:330px;
+    bottom:290px;
     left:880px;
 }
 
@@ -31,19 +31,20 @@
 }
 
 #title_logo{
-  width:745px;
+  width:688px;
 }
 
 #access_panel{
-  right: 180px;
+  right: 150px;
 }
 
 #welcome_panel{
-  left:15px;
+  left:80px;
 }
 
 #search_button_div{
-  text-align: center;
+  left: 20px;
+  top: 15px;
 }
 
 #search_button_div_inside{
@@ -62,7 +63,7 @@
 }
 
 #face_button_like{
-  top: 36px;
+  bottom: -18px;
 }
 
 .div-box {
@@ -74,4 +75,13 @@
 
 #ajax_results {
   left:11.5%;
+}
+
+#profile_image {
+  bottom: -15px;
+  left: 25px;
+}
+
+#searh_header {
+  left: 100px;
 }

@@ -1,43 +1,24 @@
 <div class="row">
 
-	<div class="two columns">
-		<div class="panel">
-			<h5><%= link_to 'Inicio', root_path %></h5>
-			<% if @fbprofile %>
-				<%= image_tag @fbp_image, :size => "80x80" %><br />
-				<h5><%= link_to @fbprofile["name"], @fbprofile["link"], :target => '_blank' %></h5>
-			<% end %>
-		</div>
-	</div>
-
-	<div class="row">
+	<div id="searh_header" class="six columns">
 		<br/>
 		<br/>
 		<br/>
-		<div class="six columns">
 			<%= form_tag(:url => {:controller => 'home', :action => 'results'}) do %>
-				<div class="row">
-					<div id="icon_number_1" class="one column"><br/><img src="/images/icon_number_1.png" /></div>
-					<div class="eleven columns" style="width:415px">
-						<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}) ) %>
-						<br/>
-						<br/>
-						<%= select_tag(:posts_cant, options_for_select([20, 40, 60, 80, 100, 120, 200, 250, 300])) %> 
-					</div>
+				<div class="six columns" style="left:100px">
+					<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}) ) %>
+					<br/>
+					<br/>
+					<%= select_tag(:posts_cant, options_for_select([['20 posts', 20], ['40 posts', 40], ['60 posts', 60], ['80 posts', 80], ['120 posts', 120], ['180 posts', 180], ['250 posts', 250]])) %> 
 				</div>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<div id="search_button_div" class="row">
-					<div id="icon_number_2" class="one column" style="left: 125px;"><img src="/images/icon_number_2.png" /></div>
-					<div id="search_button_div_inside" class="five columns"><%= submit_tag "Buscar!", :id => 'search_button', :class => 'small button' %></div>
-				</div>
-				<div class="row">
-					<div id="loading" class="six columns"><img src="/images/roller.gif" /></div>
+				<div id="search_button_div" class="three columns">
+					<%= submit_tag "Buscar!", :id => 'search_button', :class => 'small button' %>
 				</div>
 			<% end %>
-		</div>
+
+			<div id="loading" class="three columns">
+				<img src="/images/roller.gif" />
+			</div>
 	</div>
 </div>
 
@@ -48,7 +29,6 @@
 			<% if @graph_group_data %>
 				<div id="search_box">
 					<div class="eleven columns radius panel" style="width:365px">
-								<div id="icon_number_3" class="one column" style="width:20%"><img src="/images/icon_number_3.png" /></div>
 								<div class="nine column">
 									<input id="search_input" type="text" placeholder="'vendo', 'alquilo', 'preparo en' ..."><br/>
 									<span id="num_results"></span> posts
@@ -63,11 +43,7 @@
 				<%= image_tag @graph_group_data["icon"] %>
 				<%= link_to @graph_group_data["name"], "http://facebook.com/" + @graph_group_data["id"], :target => '_blank' %>
 				<br/>
-				<div class="group-list">
-					<%= @graph_group_data["description"] %>
-				</div>
 				<br/>
-
 				<div id="container" class="twelve columns">
 					<ul id="search_list" class="group-list">
 						<% @graph_group_data.each do |item| %>
@@ -75,9 +51,9 @@
 							<% if item[1]["data"] %>
 								<% item[1]["data"].each do |m| %>
 										<div class="four columns panel div-box box">
-											<h5>
+											<h6>
 												<%= link_to m["from"]["name"], "http://facebook.com/" + m["from"]["id"], :target => '_blank' %>
-											</h5>
+											</h6>
 											<% if m["message"] %>
 												<span style="display:block;"><%= m["message"] %></span>
 											<% else %>
