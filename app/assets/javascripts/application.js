@@ -14,6 +14,7 @@
 $(document).ready(function(){
   $('#loading_access').hide();
   $('#loading').hide();
+  $('#search_box').hide();
   set_scroll_up();
   set_search_button();
   loading_acces();
@@ -55,6 +56,7 @@ function set_search_button() {
       url      : '/results?group=' + drop1 + '&posts_cant=' + drop2,
       success  : function(data){
         $('#loading').hide();
+        $('#search_box').show();
         var html               = data;
         var html_filtered      = $(html).filter('#ajax_results').find("#posts_results");
         $('div#posts_results').html(html_filtered);

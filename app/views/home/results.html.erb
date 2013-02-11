@@ -1,24 +1,27 @@
 <div class="row">
 
-	<div id="searh_header" class="six columns">
-		<br/>
-		<br/>
-		<br/>
+	<div id="search_header" class="six columns radius panel">
 			<%= form_tag(:url => {:controller => 'home', :action => 'results'}) do %>
-				<div class="six columns" style="left:100px">
+				<div id="select_button_search" class="six columns">
 					<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}) ) %>
 					<br/>
 					<br/>
 					<%= select_tag(:posts_cant, options_for_select([['20 posts', 20], ['40 posts', 40], ['60 posts', 60], ['80 posts', 80], ['120 posts', 120], ['180 posts', 180], ['250 posts', 250]])) %> 
 				</div>
-				<div id="search_button_div" class="three columns">
-					<%= submit_tag "Buscar!", :id => 'search_button', :class => 'small button' %>
+				<div id="search_button_container" class="two columns">
+					<div id="search_button_div">
+						<%= submit_tag "Buscar!", :id => 'search_button', :class => 'small button' %>
+					</div>
+					<div id="loading">
+						<img src="/images/roller.gif" />
+					</div>
+				</div>
+				<div id="search_box" class="four columns">
+					<input id="search_input" type="text" placeholder="'vendo', 'alquilo', 'preparo en' ...">
+					<span id="num_results"></span> posts
 				</div>
 			<% end %>
 
-			<div id="loading" class="three columns">
-				<img src="/images/roller.gif" />
-			</div>
 	</div>
 </div>
 
@@ -27,19 +30,6 @@
 
 		<div id="posts_results">
 			<% if @graph_group_data %>
-				<div id="search_box">
-					<div class="eleven columns radius panel" style="width:365px">
-								<div class="nine column">
-									<input id="search_input" type="text" placeholder="'vendo', 'alquilo', 'preparo en' ..."><br/>
-									<span id="num_results"></span> posts
-								</div>
-							<div>
-							</div>
-							<br/>
-					</div>
-				</div>
-				<br/>
-
 				<%= image_tag @graph_group_data["icon"] %>
 				<%= link_to @graph_group_data["name"], "http://facebook.com/" + @graph_group_data["id"], :target => '_blank' %>
 				<br/>
