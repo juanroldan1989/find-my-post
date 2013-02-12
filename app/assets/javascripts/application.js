@@ -18,6 +18,9 @@ $(document).ready(function(){
   set_scroll_up();
   set_search_button();
   loading_acces();
+
+  //URL cleaner
+  window.history.pushState("", "", "/");
 });
 
 function set_scroll_up(){
