@@ -29,15 +29,17 @@
 }
 
 #title_logo{
-  width:688px;
+  right: 175px;
+  width: 660px;
 }
 
 #access_panel{
-  right: 150px;
+  right: 190px;
+  height: 244px;
 }
 
 #welcome_panel{
-  left:80px;
+  left:120px;
 }
 
 #search_button_div{
@@ -58,10 +60,6 @@
 }
 #icon_number_3{
   width: 10%;
-}
-
-#face_button_like{
-  bottom: -18px;
 }
 
 .div-box {
@@ -101,4 +99,8 @@
 
 #search_list span, li strong div, li a {
   font-size: 12px;
+}
+
+#access_button {
+  left: 18px;
 }
