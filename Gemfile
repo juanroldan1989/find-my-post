@@ -10,6 +10,7 @@ group :assets do
 end
 
 group :test, :development do
+	gem 'rails_best_practices'
 end
 
 group :production do
