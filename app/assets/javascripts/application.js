@@ -21,6 +21,9 @@ $(document).ready(function(){
 
   //URL cleaner
   window.history.pushState("", "", "/");
+
+  //MixPanel Visits Tracking
+  mixpanel.track("Loading Page");
 });
 
 function set_scroll_up(){
@@ -84,5 +87,8 @@ function loading_acces(){
   $('#access_button').click(function(){
     $('#grant_access').hide();
     $('#loading_access').show();
+
+    //MixPanel Visits Tracking
+    mixpanel.track("Click en Comenzar");
   })
 }
