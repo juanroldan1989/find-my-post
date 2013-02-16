@@ -108,13 +108,12 @@
   z-index: 2;
   display: block;
   position: fixed;
-  top: 1;
   text-align: left;
   -webkit-box-shadow: 0px 0px 8px 0px black;
   -moz-box-shadow: 0px 0px 8px 0px #000000;
   box-shadow: 0px 0px 8px 0px black;
-  left: 284px;
-  bottom: 430px;
+  left: 283px;
+  top: 105px;
 }
 
 #select_button_search {

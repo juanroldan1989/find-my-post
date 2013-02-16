@@ -14,8 +14,8 @@ class HomeController < ApplicationController
 		end		
 
 		# auth established, now do a graph call:
-		# @api = Koala::Facebook::API.new('AAACEdEose0cBAHtZC0NT37xfOfbP1keDQmeT46JyPFZC3lnDnDqZBRJfb8y41U12vSfH7hNT1ZBdYZBCO86jMDDf95FZCkZADKJtW8clSbbBgZDZD')
-		@api = Koala::Facebook::API.new(session[:access_token])
+		@api = Koala::Facebook::API.new('AAACEdEose0cBAOXuR2s1cr7TdKuR66EITSjBTVLZAPTU8VLkCGPOGYMZAR80zDnsZBfmmz2564ECkG33OZAZCfBYZCR7fwlNLRvkYudfIgVQZDZD')
+		# @api = Koala::Facebook::API.new(session[:access_token])
 
 		begin
 			#consultas personales
