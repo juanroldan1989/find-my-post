@@ -7,7 +7,7 @@
 */
 
 #search_box{
-    width: 258px;
+  width: 258px;
 }
 
 .group-list {
@@ -29,7 +29,7 @@
 }
 
 #title_logo{
-  right: 175px;
+  left: -175px;
   width: 660px;
 }
 
