@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.timeago
-//= require jquery.timeago.es
+//= require results/jquery.timeago
+//= require results/jquery.timeago.es
 //= require results/all
 //= require results/masonry
 //= require results/jquery.fastLiveFilter
