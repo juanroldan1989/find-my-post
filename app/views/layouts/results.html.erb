@@ -16,21 +16,5 @@
 
 <%= yield %>
 
-<script>
-  $( window ).load( function()
-  {
-      var columns    = 4,
-          setColumns = function() { columns = $( window ).width() > 1288 ? 4 : $( window ).width() > 965 ? 3 : $( window ).width() > 643 ? 2 : 1; };
-
-      setColumns();
-      $( window ).resize( setColumns );
-
-      $( '.list' ).masonry({
-          itemSelector: '.div-box',
-          columnWidth:  function( containerWidth ) { return containerWidth / columns; }
-      });
-  })
-</script>
-
 </body>
 </html>

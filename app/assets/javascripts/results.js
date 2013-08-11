@@ -3,9 +3,8 @@
 //= require jquery.timeago
 //= require jquery.timeago.es
 //= require results/all
-//= require results/jquery.fastLiveFilter
 //= require results/masonry
-//= require results/live_filter_code.js
+//= require results/jquery.fastLiveFilter
 
 $(document).ready(function(){
   $('#loading').hide();
@@ -51,11 +50,26 @@ function set_search_button() {
 }
 
 function set_live_filter(){  
-  $('#search_input').fastLiveFilter('#search_list', {
-    callback: function(total) { 
-    	$('#num_results').html(total);
-    }
-  });
-  $('#num_results').html($('#search_list li').size())
-  $('#search_input').focus();
+	set_masonry_settings();
+
+	$('#search_input').fastLiveFilter('#search_list', {
+	  callback: function(total) { 
+	    $('#num_results').html(total); 
+	    $( '.list' ).masonry( 'reload' ); }
+	});
+	$('#num_results').html($('#search_list li').size())
+	$('#search_input').focus();
+}
+
+function set_masonry_settings() {
+	var columns    = 4,
+    setColumns = function() { columns = $( window ).width() > 1288 ? 4 : $( window ).width() > 965 ? 3 : $( window ).width() > 643 ? 2 : 1; };
+
+	setColumns();
+	$( window ).resize( setColumns );
+
+	$( '.list' ).masonry({
+	    itemSelector: '.div-box',
+	    columnWidth:  function( containerWidth ) { return containerWidth / columns; }
+	});
 }
