@@ -34,14 +34,19 @@ jQuery.fn.fastLiveFilter = function(list, options) {
 			if ((li.textContent || li.innerText || "").toLowerCase().indexOf(filter) >= 0) {
 				if (li.style.display == "none") {
 					li.style.display = oldDisplay;
+					$(li).addClass("div-box")
 				}
 				numShown++;
 			} else {
 				if (li.style.display != "none") {
 					li.style.display = "none";
+					$(li).removeClass("div-box")
 				}
 			}
 		}
+
+
+
 		callback(numShown);
 		// var endTime = new Date().getTime();
 		// console.log('Search for ' + filter + ' took: ' + (endTime - startTime) + ' (' + numShown + ' results)');

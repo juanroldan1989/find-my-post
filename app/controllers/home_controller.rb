@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+	layout :resolve_layout
+
   def index
    	session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/results')
 		@auth_url =  session[:oauth].url_for_oauth_code(:permissions => "user_groups") 	
@@ -38,6 +40,16 @@ class HomeController < ApplicationController
  		respond_to do |format|
 		 format.html {   }
 		end
+  end
+
+	private
+  def resolve_layout
+  	case action_name
+  	when "results"
+  		"results"
+  	else
+  		"application" 
+  	end
   end
 
 end

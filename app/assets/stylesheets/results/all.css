@@ -1,0 +1,100 @@
+/* line 3, all.css.scss */
+.list span, li strong div, li a {
+  font-size: 12px; }
+
+/* line 7, all.css.scss */
+.header {
+  height: 38px;
+  background: #3b5998;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999; }
+  /* line 15, all.css.scss */
+  .header h1 {
+    padding: 7px 0 0 10px;
+    margin: 0; }
+    /* line 19, all.css.scss */
+    .header h1 a {
+      display: block;
+      width: 173px;
+      height: 24px;
+      text-indent: -99999px;
+      background: url(../../images/encuentra-mi-post.png) no-repeat; }
+
+/* line 30, all.css.scss */
+.content, .container {
+  margin: 0 auto;
+  width: 966px; }
+
+/* line 35, all.css.scss */
+.content-list {
+  margin-top: 58px; }
+
+/* line 39, all.css.scss */
+.panel {
+  background: none repeat scroll 0 0 #f2f2f2;
+  border: 1px solid #e6e6e6;
+  margin: 0 0 22px;
+  padding: 20px;
+  border-radius: 5px 5px 5px 5px;
+  float: left; }
+
+/* line 49, all.css.scss */
+.list {
+  overflow: hidden;
+  margin: 20px auto; }
+
+/* line 54, all.css.scss */
+.div-box {
+  margin: 0 10px 20px;
+  width: 260px; }
+
+/* line 59, all.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #222222;
+  font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  margin-top: 14px;
+  text-rendering: optimizelegibility; }
+
+/* line 70, all.css.scss */
+h6 {
+  font-size: 14px;
+  margin-top: 0; }
+
+/* line 75, all.css.scss */
+a {
+  color: #3B5998;
+  line-height: inherit;
+  text-decoration: none; }
+
+/* line 80, all.css.scss */
+ul.inline-list, ul.link-list {
+  list-style: none outside none;
+  margin: 0 0 0 -22px;
+  overflow: hidden;
+  padding: 0; }
+
+/* line 86, all.css.scss */
+li {
+  list-style: none;
+  margin-left: 22px;
+  display: block; }
+
+@media only screen and (min-width: 1288px) {
+  /* line 97, all.css.scss */
+  .content, .container {
+    width: 1288px; } }
+@media only screen and (max-width: 965px) {
+  /* line 105, all.css.scss */
+  .content, .container {
+    width: 644px; } }
+@media only screen and (max-width: 643px) {
+  /* line 112, all.css.scss */
+  .content, .container {
+    width: 312px;
+    margin: 0 auto 20px; } }
