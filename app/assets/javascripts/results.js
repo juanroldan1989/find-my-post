@@ -3,6 +3,7 @@
 //= require results/jquery.timeago.es
 //= require results/masonry
 //= require results/jquery.fastLiveFilter
+//= require results/chosen.jquery
 
 $(document).ready(function(){
   $('#loading').hide();

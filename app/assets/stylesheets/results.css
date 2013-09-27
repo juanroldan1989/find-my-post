@@ -5,4 +5,5 @@
  *= require_self
  *= require results/normalize 
  *= require results/all
+ *= require results/chosen
 */

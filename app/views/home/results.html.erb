@@ -5,14 +5,16 @@
 	<div id="search_header" class="content content-list">
 			<%= form_tag(:url => {:controller => 'home', :action => 'results'}) do %>
 				<div id="select_button_search" class="six columns">
-					<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}) ) %>
+					<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}), :class => "chosen-select" ) %>
 					<br/>
 					<br/>
-					<%= select_tag(:posts_cant, options_for_select([['20 posts', 20], ['40 posts', 40], ['60 posts', 60], ['80 posts', 80], ['120 posts', 120], ['180 posts', 180], ['250 posts', 250]])) %> 
+					<%= select_tag(:posts_cant, options_for_select([['20 posts', 20], ['40 posts', 40], ['60 posts', 60], ['80 posts', 80], ['120 posts', 120], ['180 posts', 180], ['250 posts', 250]]), :class => "chosen-select") %> 
 				</div>
+				<br/>
+
 				<div id="search_button_container" class="two columns">
 					<div id="search_button_div">
-						<%= submit_tag "Buscar!", :id => 'search_button', :class => 'small button' %>
+						<%= submit_tag "Buscar!", :id => 'search_button', :class => 'button button-blue' %>
 					</div>
 					<div id="loading">
 						<img src="/images/roller.gif" />
@@ -71,3 +73,16 @@
 		<% end %>
 	</div>
 </div>
+
+<script type="text/javascript">
+  var config = {
+    '.chosen-select'           : {},
+    '.chosen-select-deselect'  : {allow_single_deselect:true},
+    '.chosen-select-no-single' : {disable_search_threshold:10},
+    '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+    '.chosen-select-width'     : {width:"95%"}
+  }
+  for (var selector in config) {
+    $(selector).chosen(config[selector]);
+  }
+</script>
