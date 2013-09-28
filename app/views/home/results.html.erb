@@ -1,14 +1,11 @@
-<br/>
-<br/>
-
 <div>
 	<div id="search_header" class="content content-list">
 			<%= form_tag(:url => {:controller => 'home', :action => 'results'}) do %>
 				<div id="select_button_search" class="six columns">
-					<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}), :class => "chosen-select" ) %>
+					<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}), :class => "chosen-select", :prompt => "Grupo..." ) %>
 					<br/>
 					<br/>
-					<%= select_tag(:posts_cant, options_for_select([['20 posts', 20], ['40 posts', 40], ['60 posts', 60], ['80 posts', 80], ['120 posts', 120], ['180 posts', 180], ['250 posts', 250]]), :class => "chosen-select") %> 
+					<%= select_tag(:posts_cant, options_for_select([['20 posts', 20], ['40 posts', 40], ['60 posts', 60], ['80 posts', 80], ['120 posts', 120], ['180 posts', 180], ['250 posts', 250]]), :class => "chosen-select", :prompt => "Cantidad de posts...") %> 
 				</div>
 				<br/>
 
@@ -20,16 +17,14 @@
 						<img src="/images/roller.gif" />
 					</div>
 				</div>
+				<br/>
 				<div id="search_box" class="four columns">
-					<input id="search_input" type="text" placeholder="'vendo', 'alquilo', 'preparo en' ...">
-					<span id="num_results"></span> posts encontrados
+					<input id="search_input" type="text" placeholder="vendo, alquilo, preparo en ..." style="width:300px">
+					<!-- <span id="num_results"></span> posts encontrados -->
 				</div>
 			<% end %>
 	</div>
 </div>
-
-<br/>
-<br/>
 
 <div id="ajax_results">
 	<div id="posts_results">
