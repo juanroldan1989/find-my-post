@@ -1,20 +1,13 @@
 class HomeController < ApplicationController
   layout :set_layout
 
+  before_filter :set_session,      only: :index
+  before_filter :set_access_token, only: :results
+
   def index
-    session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/results')
-    @auth_url =  session[:oauth].url_for_oauth_code(:permissions => "user_groups")  
-    
-    respond_to do |format|
-       format.html { }
-     end
   end
 
   def results
-    if params[:code]
-      session[:access_token] = session[:oauth].get_access_token(params[:code])
-    end
-
     # auth established, now do a graph call:
     # @api = Koala::Facebook::API.new('AAACEdEose0cBAHtZC0NT37xfOfbP1keDQmeT46JyPFZC3lnDnDqZBRJfb8y41U12vSfH7hNT1ZBdYZBCO86jMDDf95FZCkZADKJtW8clSbbBgZDZD')
     @api = Koala::Facebook::API.new(session[:access_token])
@@ -43,6 +36,22 @@ class HomeController < ApplicationController
   end
 
   private
+
+  def setup_oauth
+    @setup_oauth ||= SetupOauth.new
+  end
+
+  def set_access_token
+    if params[:code].present?
+      session[:access_token] = session[:oauth].get_token(params)
+    end
+  end
+
+  def set_session
+    session[:oauth] = setup_oauth
+
+    @auth_url       = setup_oauth.oauth_url
+  end
 
   def set_layout
     case action_name
