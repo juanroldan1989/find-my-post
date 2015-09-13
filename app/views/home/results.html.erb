@@ -2,7 +2,7 @@
 	<div id="search_header" class="content content-list">
 			<%= form_tag(:url => {:controller => 'home', :action => 'results'}) do %>
 				<div id="select_button_search" class="six columns">
-					<%= select_tag(:group, options_for_select(@user_groups.collect {|s| [s["name"], s["gid"]]}), :class => "chosen-select", :prompt => "Grupo..." ) %>
+					<%= select_tag(:group, options_for_select(groups.collect {|s| [s["name"], s["gid"]]}), :class => "chosen-select", :prompt => "Grupo..." ) %>
 					<br/>
 					<br/>
 					<%= select_tag(:posts_cant, options_for_select([['20 posts', 20], ['40 posts', 40], ['60 posts', 60], ['80 posts', 80], ['120 posts', 120], ['180 posts', 180], ['250 posts', 250]]), :class => "chosen-select", :prompt => "Cantidad de posts...") %> 
@@ -29,11 +29,11 @@
 <div id="ajax_results">
 	<div id="posts_results">
 		<div class="content content-list">
-			<% if @graph_group_data %>
-				<%= image_tag @graph_group_data["icon"] %>
-				<%= link_to @graph_group_data["name"], "http://facebook.com/" + @graph_group_data["id"], :target => '_blank' %>
+			<% if posts.any? %>
+				<%= image_tag posts["icon"] %>
+				<%= link_to posts["name"], "http://facebook.com/" + posts["id"], :target => '_blank' %>
 				<div id="search_list" class="list">
-					<% @graph_group_data.each do |item| %>
+					<% posts.each do |item| %>
 						<!-- 1er item item[0] es el ID, 2do item item[1] es el feed -->
 						<% if item[1]["data"] %>
 							<% item[1]["data"].each do |m| %>
