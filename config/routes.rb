@@ -1,4 +1,4 @@
 OrganizeME::Application.routes.draw do
-  root :to => 'home#index'
-  match '/results' => 'home#results'
+  get "/results" => "home#results"
+  root :to       => "home#index"
 end
