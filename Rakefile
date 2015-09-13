@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-OrganizeME::Application.load_tasks
+FindMyPost::Application.load_tasks
