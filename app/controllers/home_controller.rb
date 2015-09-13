@@ -25,10 +25,6 @@ class HomeController < ApplicationController
     @posts ||= @user_graph.posts_by_group(params)
   end
 
-  def setup_oauth
-    @setup_oauth ||= SetupOauth.new
-  end
-
   def set_graph
     if params[:code].present?
       session[:access_token] = session[:oauth].get_token(params)
@@ -38,9 +34,9 @@ class HomeController < ApplicationController
   end
 
   def set_session
-    session[:oauth] = setup_oauth
+    session[:oauth] = SetupOauth.new
 
-    @auth_url       = setup_oauth.oauth_url
+    @auth_url       = session[:oauth].oauth_url
   end
 
   def set_layout
