@@ -1,50 +1,40 @@
 class HomeController < ApplicationController
   layout :set_layout
 
-  before_filter :set_session,      only: :index
-  before_filter :set_access_token, only: :results
+  before_filter :set_graph,   only: :results
+  before_filter :set_session, only: :index
+
+  helper_method :groups
+  helper_method :posts
 
   def index
   end
 
   def results
-    # auth established, now do a graph call:
-    # @api = Koala::Facebook::API.new('AAACEdEose0cBAHtZC0NT37xfOfbP1keDQmeT46JyPFZC3lnDnDqZBRJfb8y41U12vSfH7hNT1ZBdYZBCO86jMDDf95FZCkZADKJtW8clSbbBgZDZD')
-    @api = Koala::Facebook::API.new(session[:access_token])
-
-    begin
-      #consultas personales
-      @fbprofile  = @api.get_object("me")
-      @fbp_image  = @api.get_picture("me")
-
-      fql          = "SELECT gid, name FROM group WHERE gid IN (SELECT gid FROM group_member WHERE uid = me()) ORDER BY name"
-      @user_groups = @api.fql_query(fql)
-
-      #selecciono un grupo del dropdown
-      if params[:group]
-        #consultar grupo por su ID, no desde mi face: /me/groups/...
-        @graph_group_data    = @api.get_object("/" + params[:group], "fields" => "name,description,icon,feed.fields(from,message,name).limit(" + params[:posts_cant] + ")")
-      end
-
-    rescue Exception=>ex
-      puts ex.message
-    end
-  
-    respond_to do |format|
-     format.html { }
-    end
+    @fbprofile  = @user_graph.profile
+    @fbp_image  = @user_graph.picture
   end
 
   private
+
+  def groups
+    @groups ||= @user_graph.groups
+  end
+
+  def posts
+    @posts ||= @user_graph.posts_by_group(params)
+  end
 
   def setup_oauth
     @setup_oauth ||= SetupOauth.new
   end
 
-  def set_access_token
+  def set_graph
     if params[:code].present?
       session[:access_token] = session[:oauth].get_token(params)
     end
+
+    @user_graph = UserGraph.new(session[:access_token])
   end
 
   def set_session
@@ -61,5 +51,4 @@ class HomeController < ApplicationController
       "application"
     end
   end
-
 end
