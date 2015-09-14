@@ -21,8 +21,12 @@ class HomeController < ApplicationController
     @groups ||= @user_graph.groups
   end
 
+  def group_posts
+    @group_posts ||= GroupPosts.new(@user_graph, params)
+  end
+
   def posts
-    @posts ||= @user_graph.posts_by_group(params)
+    @posts ||= group_posts.results
   end
 
   def set_graph
