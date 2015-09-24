@@ -4,8 +4,9 @@ class HomeController < ApplicationController
   before_filter :set_graph,   only: :results
   before_filter :set_session, only: :index
 
+  helper_method :feed_data
+  helper_method :feed_results
   helper_method :groups
-  helper_method :posts
 
   def index
   end
@@ -21,12 +22,20 @@ class HomeController < ApplicationController
     @groups ||= @user_graph.groups
   end
 
-  def group_posts
-    @group_posts ||= GroupPosts.new(@user_graph, params)
+  def group_data
+    @group_data ||= GroupData.new(@user_graph, params).call
   end
 
-  def posts
-    @posts ||= group_posts.results
+  def feed
+    @feed ||= FeedPresenter.new(group_data)
+  end
+
+  def feed_data
+    @feed_data ||= feed.data
+  end
+
+  def feed_results
+    @feed_results ||= feed.results
   end
 
   def set_graph
