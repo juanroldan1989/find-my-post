@@ -1,0 +1,22 @@
+<div class="panel div-box box">
+  <h6>
+    <%= link_to item[:from_name], "http://facebook.com/" + item[:from_id], target: "_blank" %>
+  </h6>
+  <% if item[:message] %>
+    <span style="display:block;"><%= item[:message] %></span>
+  <% else %>
+    <span style="display:block;"><%= item[:name] %></span>
+  <% end %>
+  <br/>
+  <ul class="link-list">
+    <li>
+      <strong><div class="item-updated-time" title="<%= item[:updated_time] %>">
+          <%= item[:updated_time] %>
+        </div>
+      </strong>
+    </li>
+    <li>
+      <%= link_to "Ver en Facebook", "http://facebook.com/" + item[:id], target: "_blank" %>
+    </li>
+  </ul>
+</div>

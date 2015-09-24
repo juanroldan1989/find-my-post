@@ -34,30 +34,7 @@
         <%= link_to feed_data[:name], "http://facebook.com/#{feed_data[:id]}", target: "_blank" %>
 
         <div id="search_list" class="list">
-          <% feed_results.each do |feed_item| %>
-            <div class="panel div-box box">
-              <h6>
-                <%= link_to feed_item[:from_name], "http://facebook.com/" + feed_item[:from_id], target: "_blank" %>
-              </h6>
-              <% if feed_item[:message] %>
-                <span style="display:block;"><%= feed_item[:message] %></span>
-              <% else %>
-                <span style="display:block;"><%= feed_item[:name] %></span>
-              <% end %>
-              <br/>
-              <ul class="link-list">
-                <li>
-                  <strong><div class="item-updated-time" title="<%= feed_item[:updated_time] %>">
-                      <%= feed_item[:updated_time] %>
-                    </div>
-                  </strong>
-                </li>
-                <li>
-                  <%= link_to "Ver en Facebook", "http://facebook.com/" + feed_item[:id], target: "_blank" %>
-                </li>
-              </ul>
-            </div>
-          <% end %>
+          <%= render partial: "feed_item", collection: feed_results, as: :item %>
         </div>
       <% end %>
     </div>
