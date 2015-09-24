@@ -1,4 +1,4 @@
-class GroupPosts
+class GroupData
 
   attr_reader :counter
   attr_reader :group
@@ -10,12 +10,8 @@ class GroupPosts
     @user_graph = user_graph
   end
 
-  def results
-    if group.present?
-      user_graph.api.get_object("/#{group}", "fields" => fields)
-    else
-      []
-    end
+  def call
+    group.present? ? set_group_graph : []
   end
 
   private
@@ -26,5 +22,9 @@ class GroupPosts
 
   def posts_counter
     @posts_counter ||= counter.present? ? counter : 20
+  end
+
+  def set_group_graph
+    user_graph.api.get_object("/#{group}", "fields" => fields)
   end
 end
