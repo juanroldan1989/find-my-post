@@ -2,11 +2,15 @@
   <h6>
     <%= link_to item[:from_name], "http://facebook.com/" + item[:from_id], target: "_blank" %>
   </h6>
-  <% if item[:message] %>
-    <span style="display:block;"><%= item[:message] %></span>
-  <% else %>
-    <span style="display:block;"><%= item[:name] %></span>
-  <% end %>
+
+  <span style="display:block;">
+    <% if item[:message].present? %>
+      <%= item[:message] %>
+    <% else %>
+      <%= item[:name] %>
+    <% end %>
+  </span>
+
   <br/>
   <ul class="link-list">
     <li>
