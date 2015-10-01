@@ -4,9 +4,7 @@
 
 * I find this tool really fast to locate any post when you're just interested in find it! and not in all the publicity Facebook is offering around xD
 
-==
-
-- Work in Progress
+Work in Progress
 
 * I18n
 * Specs
