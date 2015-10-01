@@ -1,11 +1,8 @@
 == Welcome to FindMyPost!
 
-A web application to look inside your facebook groups and find any post you've missed.
+* A web application to look inside your facebook groups and find any post you've missed.
 
-==
-
-I find this tool really fast to locate any post when you're just interested in find it!
-and not in all the publicity Facebook is offering around xD
+* I find this tool really fast to locate any post when you're just interested in find it! and not in all the publicity Facebook is offering around xD
 
 ==
 
