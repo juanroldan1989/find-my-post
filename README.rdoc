@@ -6,8 +6,5 @@
 
 Work in Progress
 
-* I18n
 * Specs
 * Sanitize FeedItem's content
-* Search posts by date range
-* Search params added as params at URL level
