@@ -1,20 +1,20 @@
 <div class="row">
 
   <div id="welcome_panel" class="six columns panel">
-    <h3>Bienvenido!</h3>
+    <h3></h3>
     <h5 class="subheader">
       <div id="icon_number_1" class="two columns"><img src="/images/icon_number_1.png" /></div>
-      <h6 class="subheader">Elegir grupo y cantidad de posts</h6>
+      <h6 class="subheader">Pick group and # of posts</h6>
 
       <div id="icon_number_2" class="two columns"><img src="/images/icon_number_2.png" /></div>
-      <h6 class="subheader">Buscar</h6>
+      <h6 class="subheader">Search</h6>
       
       <div id="icon_number_3" class="two columns"><img src="/images/icon_number_3.png" /></div>
-      <h6 class="subheader">Filtrar posts de interés (por contenido, autor, etc.)</h6>
+      <h6 class="subheader">Filter results by content, author, etc.</h6>
     </h5>
     <br/>
     <div id="grant_access">
-      <%= link_to 'Comenzar!', @auth_url, :class=>"radius button", :id => 'access_button'%>
+      <%= link_to 'Got it', @auth_url, class: "radius button", id: "access_button" %>
     </div>
     <div id="loading_access">
       <img src="/images/roller.gif" />

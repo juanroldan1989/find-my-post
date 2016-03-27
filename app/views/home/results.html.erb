@@ -2,16 +2,16 @@
   <div id="search_header" class="content content-list">
     <%= form_tag(url: search_url) do %>
       <div id="select_button_search" class="six columns">
-        <%= select_tag(:group, options_for_select(groups_to_select_from), class: "chosen-select", prompt: "Grupo..." ) %>
+        <%= select_tag(:group, options_for_select(groups_to_select_from), class: "chosen-select", prompt: "Group..." ) %>
         <br/>
         <br/>
-        <%= select_tag(:posts_cant, options_for_select(posts_amount), class: "chosen-select", prompt: "Cantidad de posts...") %> 
+        <%= select_tag(:posts_cant, options_for_select(posts_amount), class: "chosen-select", prompt: "Posts count...") %> 
       </div>
       <br/>
 
       <div id="search_button_container" class="two columns">
         <div id="search_button_div">
-          <%= submit_tag "Buscar!", id: "search_button", class: "button button-blue" %>
+          <%= submit_tag "Search", id: "search_button", class: "button button-blue" %>
         </div>
         <div id="loading">
           <img src="/images/roller.gif" />
@@ -19,8 +19,8 @@
       </div>
       <br/>
       <div id="search_box" class="four columns">
-        <input id="search_input" type="text" placeholder="vendo, alquilo, preparo en ..." style="width:300px">
-        <!-- <span id="num_results"></span> posts encontrados -->
+        <input id="search_input" type="text" placeholder="sell, buy, any keyword ..." style="width:300px">
+        <span id="num_results"></span> posts found
       </div>
     <% end %>
   </div>
@@ -40,16 +40,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  var config = {
-    '.chosen-select'           : {},
-    '.chosen-select-deselect'  : {allow_single_deselect:true},
-    '.chosen-select-no-single' : {disable_search_threshold:10},
-    '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-    '.chosen-select-width'     : {width:"95%"}
-  }
-  for (var selector in config) {
-    $(selector).chosen(config[selector]);
-  }
-</script>
