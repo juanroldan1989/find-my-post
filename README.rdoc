@@ -1,4 +1,4 @@
-== FindMyPost!
+== FindMyPost! {<img src="https://codeclimate.com/github/juanroldan1989/find-my-post/badges/gpa.svg" />}[https://codeclimate.com/github/juanroldan1989/find-my-post]
 
 * A web application to look inside your facebook groups and find any post you've missed.
 
