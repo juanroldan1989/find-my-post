@@ -1,8 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-FindMyPost::Application.config.session_store :cookie_store, key: '_FindMyPost_session'
-
-# Use the database for sessions instead of the cookie-based default,
-# which shouldn't be used to store highly confidential information
-# (create the session table with "rails generate session_migration")
-# FindMyPost::Application.config.session_store :active_record_store
+Rails.application.config.session_store :cookie_store, key: '_find_my_post_session'
