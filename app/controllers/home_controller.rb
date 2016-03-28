@@ -33,7 +33,7 @@ class HomeController < ApplicationController
 
   def set_graph
     if params[:code].present?
-      session[:access_token] = session[:oauth].get_token(params)
+      session[:access_token] = SetupOauth.new.get_token(params)
     end
 
     @user_graph = UserGraph.new(session[:access_token])
