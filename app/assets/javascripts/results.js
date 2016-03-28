@@ -40,7 +40,7 @@ function set_search_button() {
         var html_filtered      = $(html).filter('#ajax_results').find("#posts_results");
         $('div#posts_results').html(html_filtered);
         set_live_filter();
-        jQuery('#ajax_results .item-updated-time').timeago();
+        $('#ajax_results .item-updated-time').timeago();
         $('div#search_button_div').show();
       }
     });
