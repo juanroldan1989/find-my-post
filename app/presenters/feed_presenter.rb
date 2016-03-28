@@ -1,22 +1,19 @@
 class FeedPresenter < Struct.new(:group_data)
 
-  def results
-    list = []
-
-    group_data.each do |item|
-      if item[1]["data"].present?
-        item[1]["data"].each do |feed_item|
-          list.push(setup_feed_item(feed_item))
-        end
-      end
+  def call
+    sanitized_group_data.collect do |item|
+      PostPresenter.new(item).call
     end
-
-    list.compact
   end
 
   private
 
-  def setup_feed_item(item)
-    PostPresenter.new(item).call
+  def sanitized_group_data
+    if group_data.present? && group_data["feed"].present? && group_data["feed"]["data"].present?
+      group_data["feed"]["data"]
+    else
+      []
+    end
   end
+
 end

@@ -25,7 +25,7 @@ class HomeController < ApplicationController
   end
 
   def feed_results
-    @feed_results ||= FeedPresenter.new(group_data).results
+    @feed_results ||= FeedPresenter.new(group_data).call
   end
 
   def set_graph
