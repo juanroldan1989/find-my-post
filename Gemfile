@@ -14,7 +14,6 @@ group :assets do
 end
 
 group :test, :development do
-  gem "faker",                "~> 1.6.3"
   gem "foreman",              "~> 0.78.0"
   gem "rspec-rails",          "~> 3.4.2"
   gem "rails_best_practices", "~> 1.15.7"
