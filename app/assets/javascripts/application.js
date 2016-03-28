@@ -2,7 +2,7 @@
 //= require jquery_ujs
 
 $(document).ready(function(){
-  $('#loading_access').hide();
+  $("#loading_access").hide();
   loading_acces();
 
   //URL cleaner
@@ -10,8 +10,8 @@ $(document).ready(function(){
 });
 
 function loading_acces(){
-  $('#access_button').click(function(){
-    $('#grant_access').hide();
-    $('#loading_access').show();
+  $("#access_button").click(function(){
+    $("#grant_access").hide();
+    $("#loading_access").show();
   })
 }
