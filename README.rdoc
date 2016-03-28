@@ -1,4 +1,4 @@
-== Welcome to FindMyPost!
+== FindMyPost!
 
 * A web application to look inside your facebook groups and find any post you've missed.
 
@@ -9,3 +9,5 @@
 * <code>bundle install</code>
 * <code>rspec spec</code>
 * <code>foreman start</code>
+
+Live app http://find-my-post.herokuapp.com
