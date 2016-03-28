@@ -11,7 +11,7 @@ $(document).ready(function(){
   set_search_button();
 
   //URL cleaner
-  window.history.pushState("", "", "/");
+  window.history.pushState("", "", "/results");
 });
 
 function set_search_button() {
