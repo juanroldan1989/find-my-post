@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   before_filter :set_graph,   only: :results
   before_filter :set_session, only: :index
 
-  helper_method :feed_results
+  helper_method :feed_items
   helper_method :group_data
   helper_method :groups
 
@@ -12,6 +12,9 @@ class HomeController < ApplicationController
   end
 
   def results
+    if request.xhr?
+      render partial: "feed"
+    end
   end
 
   private
@@ -24,8 +27,8 @@ class HomeController < ApplicationController
     @group_data ||= GroupData.new(@user_graph, params).call
   end
 
-  def feed_results
-    @feed_results ||= FeedPresenter.new(group_data).call
+  def feed_items
+    @feed_items ||= FeedPresenter.new(group_data).call
   end
 
   def set_graph

@@ -27,16 +27,5 @@
 </div>
 
 <div id="ajax_results">
-  <div id="posts_results">
-    <div class="content content-list">
-      <% if feed_results.any? %>
-        <%= image_tag group_data["icon"] %>
-        <%= link_to group_data["name"], "http://facebook.com/#{group_data['id']}", target: "_blank" %>
-
-        <div id="search_list" class="list">
-          <%= render partial: "feed_item", collection: feed_results, as: :item %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render partial: "feed" %>
 </div>

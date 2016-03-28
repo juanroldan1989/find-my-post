@@ -1,0 +1,10 @@
+<div class="content content-list">
+  <% if feed_items.any? %>
+    <%= image_tag group_data["icon"] %>
+    <%= link_to group_data["name"], "http://facebook.com/#{group_data['id']}", target: "_blank" %>
+
+    <div id="search_list" class="list">
+      <%= render partial: "feed_item", collection: feed_items, as: :item %>
+    </div>
+  <% end %>
+</div>
