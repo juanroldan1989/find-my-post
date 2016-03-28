@@ -14,8 +14,11 @@ group :assets do
 end
 
 group :test, :development do
+  gem "factory_girl_rails",   "~> 4.6.0"
   gem "foreman",              "~> 0.78.0"
+  gem "rspec-rails",          "~> 3.4.2"
   gem "rails_best_practices", "~> 1.15.7"
+  gem "shoulda-matchers",     "~> 3.1.1"
 end
 
 group :production do
