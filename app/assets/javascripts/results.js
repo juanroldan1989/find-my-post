@@ -37,7 +37,7 @@ function set_search_button() {
       success  : function(data){
         $("#loading").hide();
         $("#search_box").show();
-        $("#ajax_results").html(data);
+        $("#results").html(data);
         set_live_filter();
         $("#ajax_results .item-updated-time").timeago();
         $("#search_button_div").show();
