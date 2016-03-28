@@ -12,8 +12,6 @@ class HomeController < ApplicationController
   end
 
   def results
-    @fbprofile = @user_graph.profile
-    @fbp_image = @user_graph.picture
   end
 
   private

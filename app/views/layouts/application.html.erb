@@ -19,16 +19,10 @@
 <body>
 
 <div class="row">
-  <div class="one column" id="profile_image">
-    <% if @fbprofile %>
-      <%= link_to(image_tag(@fbp_image, :size => "56x56"), @fbprofile["link"], :title => @fbprofile["name"], :rel => 'tooltip', :target => '_blank')%><br />
-    <% end %>
-  </div>
-  <div id="title_logo" class="nine columns">
-    <div>
-      <br/>
-      <a href="/"><img src="/images/logo.jpg" /></a>
-    </div>
+  <div class="one column"></div>
+  <div id="title_logo" class="10 columns">
+    <br/>
+    <a href="/"><%= image_tag "logo.jpg" %></a>
   </div>
 </div>
 
