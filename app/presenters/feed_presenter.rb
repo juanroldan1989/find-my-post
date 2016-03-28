@@ -1,18 +1,4 @@
-class FeedPresenter
-
-  attr_reader :group_data
-
-  def initialize(group_data)
-    @group_data = group_data
-  end
-
-  def data
-    {
-      id:   group_data["id"],
-      name: group_data["name"],
-      icon: group_data["icon"]
-    }
-  end
+class FeedPresenter < Struct.new(:group_data)
 
   def results
     list = []
@@ -31,6 +17,6 @@ class FeedPresenter
   private
 
   def setup_feed_item(item)
-    PostPresenter.new(item).setup
+    PostPresenter.new(item).call
   end
 end

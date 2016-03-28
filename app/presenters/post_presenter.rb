@@ -1,12 +1,6 @@
-class PostPresenter
+class PostPresenter < Struct.new(:feed_item)
 
-  attr_reader :feed_item
-
-  def initialize(feed_item)
-    @feed_item = feed_item
-  end
-
-  def setup
+  def call
     {
       id:           feed_item["id"],
       from_id:      feed_item["from"]["id"],
