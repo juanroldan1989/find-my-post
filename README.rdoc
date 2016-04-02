@@ -4,10 +4,16 @@
 
 * I find this tool really fast to locate any post when you're just interested in find it! and not in all the publicity Facebook is offering around xD
 
+---------------------------------------------------------------
+
 <b>Local Development</b>
 * <code>git clone git@github.com:juanroldan1989/find-my-post.git</code>
 * <code>bundle install</code>
 * <code>rspec spec</code>
 * <code>foreman start</code>
 
-Live app http://find-my-post.herokuapp.com
+---------------------------------------------------------------
+
+<b>Live app</b>
+
+http://find-my-post.herokuapp.com
