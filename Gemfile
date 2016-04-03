@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby                          "2.1.6"
 
+gem "coveralls",              "~> 0.8.13"
 gem "rails",                  "~> 4.1"
 gem "figaro",                 "~> 1.1.1"
 gem "jquery-rails",           "~> 3.1.4"

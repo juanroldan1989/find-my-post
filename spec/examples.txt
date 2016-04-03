@@ -1,9 +1,9 @@
 example_id                                        | status | run_time        |
 ------------------------------------------------- | ------ | --------------- |
-./spec/controllers/home_controller_spec.rb[1:1:1] | passed | 0.00338 seconds |
-./spec/controllers/home_controller_spec.rb[1:1:2] | passed | 0.01477 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:1] | passed | 0.00325 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:2] | passed | 0.09535 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:3] | passed | 0.02169 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:4] | passed | 0.01846 seconds |
+./spec/controllers/home_controller_spec.rb[1:1:1] | passed | 0.00448 seconds |
+./spec/controllers/home_controller_spec.rb[1:1:2] | passed | 0.0676 seconds  |
+./spec/controllers/home_controller_spec.rb[1:2:1] | passed | 0.29477 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:2] | passed | 0.07167 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:3] | passed | 0.00326 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:4] | passed | 0.07102 seconds |
 ./spec/helpers/home_helper.rb[1:1:1]              | passed | 0.04298 seconds |
