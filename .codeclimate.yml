@@ -1,0 +1,7 @@
+languages:
+  Ruby: true
+  JavaScript: true
+exclude_paths:
+- "app/assets/javascripts/results/all.js"
+- "app/assets/javascripts/results/masonry.js"
+- "app/assets/javascripts/results/chosen.jquery.js"
