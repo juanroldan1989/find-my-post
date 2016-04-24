@@ -24,6 +24,12 @@ Install gems:
 bundle install
 ```
 
+Set values inside `application.yml` file:
+
+```
+cp config/application.sample.yml config/application.yml
+```
+
 Validate test suite:
 
 ```
