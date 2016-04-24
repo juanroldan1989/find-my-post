@@ -11,6 +11,6 @@ test:
 production:
 
   #Application
-  domain:              "http://encuentramipost.herokuapp.com"
+  domain:              "http://find-my-post.herokuapp.com"
   facebook_app_id:     "123123"
   facebook_app_secret: "123abc"
