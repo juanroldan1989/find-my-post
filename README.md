@@ -44,4 +44,40 @@ foreman start
 
 # Live app
 
-http://find-my-post.herokuapp.com
+- http://find-my-post.herokuapp.com
+
+- Access the app and allow access to your Facebook groups:
+
+<div align="left">
+  <a href="https://github.com/juanroldan1989/find-my-post"><img width="300" src="https://github.com/juanroldan1989/find-my-post/raw/master/app/assets/images/step0.png" alt="find my post step0" /></a>
+</div>
+
+<br/>
+
+<div align="left">
+  <a href="https://github.com/juanroldan1989/find-my-post"><img width="300" src="https://github.com/juanroldan1989/find-my-post/raw/master/app/assets/images/step1.png" alt="find my post step1" /></a>
+</div>
+
+- Select group and the number of posts to retrieve:
+
+<div align="left">
+  <a href="https://github.com/juanroldan1989/find-my-post"><img width="300" src="https://github.com/juanroldan1989/find-my-post/raw/master/app/assets/images/step2.png" alt="find my post step2" /></a>
+</div>
+
+<br/>
+
+<div align="left">
+  <a href="https://github.com/juanroldan1989/find-my-post"><img width="300" src="https://github.com/juanroldan1989/find-my-post/raw/master/app/assets/images/step3.png" alt="find my post step3" /></a>
+</div>
+
+- Results retrieved from Facebook, start filtering data via keywords filter input:
+
+<div align="left">
+  <a href="https://github.com/juanroldan1989/find-my-post"><img width="300" src="https://github.com/juanroldan1989/find-my-post/raw/master/app/assets/images/step4.png" alt="find my post step4" /></a>
+</div>
+
+<br/>
+
+<div align="left">
+  <a href="https://github.com/juanroldan1989/find-my-post"><img width="300" src="https://github.com/juanroldan1989/find-my-post/raw/master/app/assets/images/step5.png" alt="find my post step5" /></a>
+</div>
