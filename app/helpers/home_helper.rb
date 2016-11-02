@@ -1,7 +1,7 @@
 module HomeHelper
 
   def groups_to_select_from
-    groups.collect {|s| [s["name"], s["gid"]]}
+    groups.collect{|s| [s["name"], s["id"]]}.sort{ |a,b| a[0] <=> b[0] }
   end
 
   def posts_amount

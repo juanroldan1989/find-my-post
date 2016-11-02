@@ -15,12 +15,6 @@ class UserGraph
   end
 
   def groups
-    @groups ||= api.fql_query(query)
-  end
-
-  private
-
-  def query
-    "SELECT gid, name FROM group WHERE gid IN (SELECT gid FROM group_member WHERE uid = me()) ORDER BY name"
+    @groups ||= api.get_connections("me", "groups")
   end
 end
