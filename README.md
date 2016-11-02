@@ -10,7 +10,7 @@
 
 Responsive web application built to search inside facebook groups and find any missed post.
 
-# Development
+### 1. Development
 
 Clone repository:
 
@@ -42,9 +42,13 @@ Launch server:
 foreman start
 ```
 
-# Live app
+### 2. Q&A
 
-- http://find-my-post.herokuapp.com
+Questions or problems? Please post them on the [issue tracker](https://github.com/juanroldan1989/find-my-post/issues). You can contribute changes by forking the project and submitting a pull request. You can ensure the tests are passing by running `rspec spec`.
+
+### 3. Live app
+
+http://find-my-post.herokuapp.com
 
 - Access the app and allow access to your Facebook groups:
 
