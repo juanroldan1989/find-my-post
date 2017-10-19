@@ -11,7 +11,8 @@ class SetupOauth
   end
 
   def oauth_url
-    @oauth_url ||= @oauth.url_for_oauth_code(permissions: "user_groups")
+    # API upgrade to v2.5 allows access only to groups managed by the User
+    @oauth_url ||= @oauth.url_for_oauth_code(permissions: "user_managed_groups")
   end
 
   private
