@@ -6,7 +6,7 @@ gem "coveralls",              "~> 0.8.13"
 gem "rails",                  "~> 4.1"
 gem "figaro",                 "~> 1.1.1"
 gem "jquery-rails",           "~> 3.1.4"
-gem "koala",                  "~> 2.2.0"
+gem "koala",                  "~> 3.0.0"
 
 group :assets do
   gem "sass-rails",           "~> 5.0.4"

@@ -41,7 +41,6 @@ class HomeController < ApplicationController
 
   def set_session
     session[:oauth] = SetupOauth.new
-
     @auth_url       = session[:oauth].oauth_url
   end
 
