@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.5/304163172988441?access_token=EAACEdEose0cBAEKVkvt3BYb1vEDeZBBt7kzDbILJuUoFeiAIop0k6GX32SVHkGbjm5OB8k0iCHxSopW78ygtlluO78lOyAHtfFd8723xmfu0xXWlhY6ojy5OU597EgsiNOU6ZCCifpORPiZBNFBIuvSPCAW42toMmRcqj5tEq3rDbGNWDcAyZC2XPrF74nUZD&fields=name,description,icon,feed.fields(from,message,name).limit(20)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-App-Usage:
+      - '{"call_count":3,"total_cputime":3,"total_time":2}'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Trace-Id:
+      - GGDI5+ZcKM2
+      Facebook-Api-Version:
+      - v2.5
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Rev:
+      - '3386247'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Etag:
+      - '"4c25e7d6a67d964fd24750ae3c94308b62e22241"'
+      Access-Control-Allow-Origin:
+      - "*"
+      Vary:
+      - Accept-Encoding
+      X-Fb-Debug:
+      - I1i7oW+Z9RBtwV11Q4o1sixYLp+TQ4Io6VlEq2lpu87INzK/w7VZNnihQJ410tIsb1mEbHAX36BXXy6rykpU/w==
+      Date:
+      - Fri, 20 Oct 2017 03:51:41 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2069'
+    body:
+      encoding: UTF-8
+      string: '{"name":"PIRATAS ONLY","description":"Un grupo para tirar todo sobre:\n\n+
+        Puterio en la facet\n+ Putas everywhere\n+ Salidas nocturnas bieeeen de trampaaa\n+
+        Armar despedidas de solteros (cr\u00e9ase o no, a varios les va a tocar dentro
+        de poco)\n+ Boliches nuevos\n+ Juntadas a hinchar el pingo (poker, alcohol,
+        pizzas, lo que venga)\n+ Si tienen videos nuevos de alguna actriz porno, son
+        libres de postearlos xD","icon":"https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/y2\/r\/_lXgqwMw7yu.png","feed":{"data":[{"from":{"name":"Juan
+        Rold\u00e1n","id":"562013635"},"message":"La de rosa vive aqui en el edificio,
+        piso 7. PD: tiene una hermana melliza","id":"304163172988441_1460493114022102"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"https:\/\/www.facebook.com\/belen.gonzalez.71619?fref=nf\n\ny
+        amigasssss","id":"304163172988441_1164118310326252"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"https:\/\/www.facebook.com\/virginia.cappetta","id":"304163172988441_1371255862945828"},{"from":{"name":"Juan
+        Rold\u00e1n","id":"562013635"},"message":"SASSSSS !!","id":"304163172988441_1460470024024411"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"name":"The Siberian Times","id":"304163172988441_1460386044032809"},{"from":{"name":"Jos\u00e9
+        Emmanuel","id":"10153249805860879"},"name":"\u0040Facu779: comparti\u00f3
+        un video...","id":"304163172988441_1321073734630708"},{"from":{"name":"Jos\u00e9
+        Emmanuel","id":"10153249805860879"},"message":"Viva el futbol Macaya!","name":"Once
+        Ideal del Nopor Sub-23","id":"304163172988441_1309364342468314"},{"from":{"name":"Jos\u00e9
+        Emmanuel","id":"10153249805860879"},"name":"Amatutes del Nopor no tan conocidas
+        - Parte 2 (+18)","id":"304163172988441_1308044669266948"},{"from":{"name":"Juan
+        Rold\u00e1n","id":"562013635"},"message":"ESSSS MUNDIAAAAAAALLL QLEAAAAAOOOO
+        JAJAJAJAJAJAJ","id":"304163172988441_1261989560539126"},{"from":{"name":"Jos\u00e9
+        Emmanuel","id":"10153249805860879"},"name":"\u00bfC\u00f3mo encontrar el email
+        de una persona? 5 formas probadas de lograrlo","id":"304163172988441_1167499773321439"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"http:\/\/www.taringa.net\/posts\/imagenes\/18324890\/Bailarina-hot---La-morocha-de-Jhonny-Allon.html","id":"304163172988441_1154047754666641"},{"from":{"name":"Juan
+        Rold\u00e1n","id":"562013635"},"message":"Se acuerdan de la guacha esta de
+        la facet ? ceci pierobon\n\n","name":"scontent-eze1-1.xx.fbcdn.net","id":"304163172988441_1147962628608487"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"http:\/\/www.taringa.net\/post\/imagenes\/19502486\/Elle-Fanning-sabe-lucir-Leggins-Rojos.html","name":"Elle
+        Fanning sabe lucir Leggins Rojos...","id":"304163172988441_1136404123097671"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"https:\/\/www.facebook.com\/celina.zermoglio","id":"304163172988441_1122226634515420"},{"from":{"name":"Juan
+        Rold\u00e1n","id":"562013635"},"message":"Jajaajjaajkaaj overcrowding...se
+        emocionaron los muchachos","name":"Ars Technica","id":"304163172988441_1100118136726270"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"https:\/\/www.instagram.com\/krisjfitness\/","name":"Kris
+        J (\u0040krisjfitness) \u2022 Instagram photos and videos","id":"304163172988441_1098503026887781"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"http:\/\/9gag.com\/tv\/p\/axdWpq\/ucla-undie-run?ref=fbl9","name":"Thousands
+        Of College Girls Run Around In Their Underwear At UCLA\u2019s \"Undie Run\"
+        | 9GAG.tv","id":"304163172988441_1082736838464400"},{"from":{"name":"Juan
+        Rold\u00e1n","id":"562013635"},"message":"Jajaajaajjajajqjqj","name":"JPosters","id":"304163172988441_1080348822036535"},{"from":{"name":"Marcelo
+        Lazarte","id":"10203760445950646"},"message":"https:\/\/www.facebook.com\/fernandagimenezmoral","id":"304163172988441_1074077945996956"},{"from":{"name":"Juan
+        Rold\u00e1n","id":"562013635"},"message":"vengo a dejar esto por aqui\n\nhttps:\/\/www.facebook.com\/kirstin.walters","id":"304163172988441_1075438062527611"}],"paging":{"previous":"https:\/\/graph.facebook.com\/v2.5\/304163172988441\/feed?fields=from,message,name&limit=20&since=1493175468&access_token=EAACEdEose0cBAEKVkvt3BYb1vEDeZBBt7kzDbILJuUoFeiAIop0k6GX32SVHkGbjm5OB8k0iCHxSopW78ygtlluO78lOyAHtfFd8723xmfu0xXWlhY6ojy5OU597EgsiNOU6ZCCifpORPiZBNFBIuvSPCAW42toMmRcqj5tEq3rDbGNWDcAyZC2XPrF74nUZD&__paging_token=enc_AdDqZAZCz4HaY6bnkZChE0U1Is8WagTwCWpAeaZAGST3LTu6x2gO5U8fXNr1IfJZC4BQLSAPdhYv0yBLOxGBuSMaNMczkicMJfiIEjZCGi4yPb5mFZCdwZDZD&__previous=1","next":"https:\/\/graph.facebook.com\/v2.5\/304163172988441\/feed?fields=from,message,name&limit=20&access_token=EAACEdEose0cBAEKVkvt3BYb1vEDeZBBt7kzDbILJuUoFeiAIop0k6GX32SVHkGbjm5OB8k0iCHxSopW78ygtlluO78lOyAHtfFd8723xmfu0xXWlhY6ojy5OU597EgsiNOU6ZCCifpORPiZBNFBIuvSPCAW42toMmRcqj5tEq3rDbGNWDcAyZC2XPrF74nUZD&until=1465029493&__paging_token=enc_AdBiN6ZAMZA4mHqAN7oj9k0xvgsY5eCqPdvhEslrmODERqMD2DSjjeIRyT7LVEOI9SZCXZBhYBC6ERc0g8xHOIOTZAhXNKZCDvZAXUSJZArlvuk4RwTXggZDZD"}},"id":"304163172988441"}'
+    http_version: 
+  recorded_at: Fri, 20 Oct 2017 03:51:41 GMT
+recorded_with: VCR 3.0.3

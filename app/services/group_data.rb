@@ -25,6 +25,11 @@ class GroupData
   end
 
   def set_group_graph
-    user_graph.api.get_object("/#{group}", "fields" => fields)
+    begin
+      user_graph.api.get_object("/#{group}", "fields" => fields)
+    rescue Koala::Facebook::APIError => e
+      puts "Koala::Facebook::APIError: #{e.message}"
+      []
+    end
   end
 end

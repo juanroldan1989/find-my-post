@@ -1,9 +1,7 @@
 class FeedPresenter < Struct.new(:group_data)
 
   def call
-    sanitized_group_data.collect do |item|
-      PostPresenter.new(item).call
-    end
+    sanitized_group_data.map { |item| PostPresenter.new(item).call }
   end
 
   private

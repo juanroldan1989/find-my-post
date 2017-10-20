@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.5/11111?access_token=EAACEdEose0cBAEKVkvt3BYb1vEDeZBBt7kzDbILJuUoFeiAIop0k6GX32SVHkGbjm5OB8k0iCHxSopW78ygtlluO78lOyAHtfFd8723xmfu0xXWlhY6ojy5OU597EgsiNOU6ZCCifpORPiZBNFBIuvSPCAW42toMmRcqj5tEq3rDbGNWDcAyZC2XPrF74nUZD&fields=name,description,icon,feed.fields(from,message,name).limit(20)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      X-App-Usage:
+      - '{"call_count":3,"total_cputime":1,"total_time":2}'
+      X-Fb-Trace-Id:
+      - G/4KqFI5E77
+      Facebook-Api-Version:
+      - v2.5
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Rev:
+      - '3386247'
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "(#100) Tried accessing nonexisting
+        field (description) on node type (User)"
+      Vary:
+      - Accept-Encoding
+      X-Fb-Debug:
+      - 1T+i9CAcog/u3CGp3tvdJCLXi5It3DQXoPFT9DevLOToXG8hKiR8p1ZfiSKozTDDwXBQvTI/p+q8pT0hbv0y1w==
+      Date:
+      - Fri, 20 Oct 2017 04:23:59 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '159'
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"(#100) Tried accessing nonexisting field (description)
+        on node type (User)","type":"OAuthException","code":100,"fbtrace_id":"G\/4KqFI5E77"}}'
+    http_version: 
+  recorded_at: Fri, 20 Oct 2017 04:23:59 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.5/304163172988441?access_token=invalid_access_token&fields=name,description,icon,feed.fields(from,message,name).limit(20)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_token" "Invalid OAuth access token."
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store
+      X-Fb-Rev:
+      - '3386247'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - B6ux8tilsBR
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - iGWRbw3U5/DWhgJ+GRChC7xx5cYsCCtgDYU1Ruatns1rQ7n3s9IXA4tfn1g+06TCfB5JocXO0RfZRabJWx6G9g==
+      Date:
+      - Fri, 20 Oct 2017 04:26:11 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '113'
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Invalid OAuth access token.","type":"OAuthException","code":190,"fbtrace_id":"B6ux8tilsBR"}}'
+    http_version: 
+  recorded_at: Fri, 20 Oct 2017 04:26:11 GMT
+recorded_with: VCR 3.0.3

@@ -31,30 +31,69 @@ RSpec.describe HomeController do
       expect(response).to render_template("home/results")
     end
 
-    it "loads all posts retrieved from Facebook's group into @feed_items" do
-      returned_post_1 = {
-        "id" => 111, "from" => { "id" => 123, "name" => "Batman" },
-        "name" => "Secondary content for the post", "message" => "Do you bleed ?...you will"
-      }
+    context "with valid access_token" do
+      let!(:set_token) do
+        session[:access_token] = 'EAACEdEose0cBAEKVkvt3BYb1vEDeZBBt7kzDbILJuUoFeiAIop0k6GX32SVHkGbjm5OB8k0iCHxSopW78ygtlluO78lOyAHtfFd8723xmfu0xXWlhY6ojy5OU597EgsiNOU6ZCCifpORPiZBNFBIuvSPCAW42toMmRcqj5tEq3rDbGNWDcAyZC2XPrF74nUZD'
+      end
 
-      returned_post_2 = {
-        "id" => 222, "from" => { "id" => 321, "name" => "Superman" },
-        "name" => "Secondary content for the post", "message" => "Stay down!"
-      }
-
-      # stubbing method filled with data from Facebook's API response
-      allow(controller).to receive(:group_data).and_return(
+      let(:feed_item) {
         {
-          "feed" => { "data" => [ returned_post_1, returned_post_2 ] }
+          id:        "304163172988441_1075438062527611",
+          from_id:   "562013635",
+          from_name: "Juan Roldán",
+          name:       nil,
+          message:    "vengo a dejar esto por aqui\n\nhttps://www.facebook.com/kirstin.walters",
+          updated_at: nil
         }
-      )
+      }
 
-      get :results
+      it "should add posts into @feed_items" do
+        VCR.use_cassette("feed_items_valid_access_token") do
+          get :results, group: "304163172988441"
 
-      post_1 = PostPresenter.new(returned_post_1).call
-      post_2 = PostPresenter.new(returned_post_2).call
+          expect(subject.send(:feed_items).last).to eq feed_item
+        end
+      end
+    end
 
-      expect(subject.send(:feed_items)).to eq [post_1, post_2]
+    context "with invalid access_token" do
+      let!(:set_token) do
+        session[:access_token] = 'invalid_access_token'
+      end
+
+      it "should not add any posts into @feed_items" do
+        VCR.use_cassette("feed_items_invalid_access_token") do
+          get :results, group: "304163172988441"
+
+          expect(subject.send(:feed_items)).to eq []
+        end
+      end
+    end
+
+    context "with invalid group_id" do
+      let!(:set_token) do
+        session[:access_token] = 'EAACEdEose0cBAEKVkvt3BYb1vEDeZBBt7kzDbILJuUoFeiAIop0k6GX32SVHkGbjm5OB8k0iCHxSopW78ygtlluO78lOyAHtfFd8723xmfu0xXWlhY6ojy5OU597EgsiNOU6ZCCifpORPiZBNFBIuvSPCAW42toMmRcqj5tEq3rDbGNWDcAyZC2XPrF74nUZD'
+      end
+
+      it "should not add any posts into @feed_items" do
+        VCR.use_cassette("feed_items_invalid_group_id") do
+          get :results, group: '11111'
+
+          expect(subject.send(:feed_items)).to eq []
+        end
+      end
+    end
+
+    context "without group_id" do
+      let!(:set_token) do
+        session[:access_token] = 'EAACEdEose0cBAEKVkvt3BYb1vEDeZBBt7kzDbILJuUoFeiAIop0k6GX32SVHkGbjm5OB8k0iCHxSopW78ygtlluO78lOyAHtfFd8723xmfu0xXWlhY6ojy5OU597EgsiNOU6ZCCifpORPiZBNFBIuvSPCAW42toMmRcqj5tEq3rDbGNWDcAyZC2XPrF74nUZD'
+      end
+
+      it "should not add any posts into @feed_items" do
+        get :results
+
+        expect(subject.send(:feed_items)).to eq []
+      end
     end
   end
 end
