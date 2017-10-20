@@ -19,6 +19,8 @@ group :test, :development do
   gem "rspec-rails",          "~> 3.4.2"
   gem "rails_best_practices", "~> 1.15.7"
   gem "shoulda-matchers",     "~> 3.1.1"
+  gem "vcr",                  "~> 3.0.3"
+  gem "webmock",              "~> 3.1.0"
 end
 
 group :production do
