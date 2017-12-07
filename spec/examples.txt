@@ -1,12 +1,12 @@
 example_id                                          | status | run_time        |
 --------------------------------------------------- | ------ | --------------- |
-./spec/controllers/home_controller_spec.rb[1:1:1]   | passed | 0.0026 seconds  |
-./spec/controllers/home_controller_spec.rb[1:1:2]   | passed | 0.02203 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:1]   | passed | 0.00402 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:2]   | passed | 0.00796 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:3]   | passed | 0.00346 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:4:1] | passed | 0.01567 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:5:1] | passed | 0.01189 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:6:1] | passed | 0.02127 seconds |
-./spec/controllers/home_controller_spec.rb[1:2:7:1] | passed | 0.00253 seconds |
+./spec/controllers/home_controller_spec.rb[1:1:1]   | passed | 0.04044 seconds |
+./spec/controllers/home_controller_spec.rb[1:1:2]   | passed | 0.00667 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:1]   | passed | 0.60167 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:2]   | passed | 0.01218 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:3]   | passed | 0.00468 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:4:1] | passed | 0.19354 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:5:1] | passed | 0.05346 seconds |
+./spec/controllers/home_controller_spec.rb[1:2:6:1] | passed | 0.0302 seconds  |
+./spec/controllers/home_controller_spec.rb[1:2:7:1] | passed | 0.00302 seconds |
 ./spec/helpers/home_helper.rb[1:1:1]                | passed | 0.04298 seconds |
