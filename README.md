@@ -48,8 +48,6 @@ Questions or problems? Please post them on the [issue tracker](https://github.co
 
 ### 3. Live app
 
-http://find-my-post.herokuapp.com
-
 - Access the app and allow access to your Facebook groups:
 
 <div align="left">
